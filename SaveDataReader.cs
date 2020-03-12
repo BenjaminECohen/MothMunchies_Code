@@ -36,6 +36,12 @@ public static class SaveDataReader
                     string[] fields = line.Split(':');
                     manager.achievementList.Add(new ChallengeSystem.Achievement(manager.achievementList.Count, fields[1], bool.Parse(fields[2])));
                 }
+                else if (line.Substring(0,flag).Equals("s"))
+                {
+                    //Character Skin Loading
+                    Debug.Log("Loading Skins");
+
+                }
                 else
                 {
                     //x is a viable flag and is used for testing purposes. It never generates anything
@@ -48,6 +54,32 @@ public static class SaveDataReader
         }
         sr.Close();
     }
+
+    public static void LoadData(MenuManager manager)
+    {
+        string path = Path.Combine(Application.dataPath, @"saveData.txt");
+        path = Path.GetFullPath(path);
+        StreamReader sr = new StreamReader(path, true);
+        string file = sr.ReadToEnd();
+        string[] lines = file.Split(System.Environment.NewLine.ToCharArray());
+
+        foreach (string line in lines)
+        {
+            if (!string.IsNullOrEmpty(line))
+            {
+                int flag = line.IndexOf(':');
+                if (line.Substring(0, flag).Equals("a"))
+                {
+                    Debug.Log("Loading Achievement");
+                    //3 Sections
+                    string[] fields = line.Split(':');
+                    manager.achievementList.Add(new ChallengeSystem.Achievement(manager.achievementList.Count, fields[1], bool.Parse(fields[2])));
+                }
+            }
+        }
+        sr.Close();
+    }
+
 
     public static void SaveData()
     {   
