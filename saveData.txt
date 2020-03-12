@@ -1,0 +1,13 @@
+x: Achievement Name : Is Completed
+x: Challenge Name : Max Count : Counter : Reset Counter on Load : Achievement Only : Is Completed : Name of Linked Achievement
+
+a:Eat Ten Clothes:False
+a:Eat Twenty Clothes:False
+a:Eat Ten Clothes In One Run:False
+a:Eat One Hundred Clothes:False
+c:Eat Ten Clothes:10:10:False:False:False:Eat Ten Clothes
+c:Eat Ten Clothes In One Run:10:0:False:True:False:Eat Ten Clothes In One Run
+c:Eat Twenty Clothes:20:0:False:False:False:Eat Twenty Clothes
+c:Eat One Hundred Clothes:100:0:True:True:False:Eat One Hundred Clothes
+c:Just Live:10:0:False:False:False:null
+c:The Incredible Moth:30:0:False:False:False:null
